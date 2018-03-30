@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="./node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">{{message1}}</div>
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:123
+            },
+            computed:{
+                message1:function () {
+                    return this.message+1
+                }
+            }
+        })
+    </script>
+</body>
+</html>

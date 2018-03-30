@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .red {
+            color: red
+        }
+
+        .blue {
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+ <div id="app">
+     <ul>
+         <ol v-for="(item,index) in datas">{{item.m}}--{{index}}---{{parentMessage}}</ol>
+     </ul>
+ </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            parentMessage:'我是父消息',
+            datas:[
+                {m:'111111'},
+                { m: '2' },
+                { m: '3' },
+                { m: '3' },
+                {m:'4'}
+            ]
+        }
+    })
+
+</script>
+
+</html>

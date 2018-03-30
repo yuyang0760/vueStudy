@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- <script type="text/javascript" src="a.js"></script> -->
+<script src="./node_modules/vue/dist/vue.js">
+</script>
+</head>
+<body>
+    <div id="app">
+        <child-component></child-component>
+    </div>
+    <child-component></child-component>
+
+<script>
+
+    // 1.定义模板
+    var child={
+        template:'<div> 我是子组件 </div>'
+    }
+    // 2. 注册
+    // Vue.component('child-component',child)
+
+    new Vue({
+        el:'#app',
+        components:{
+            'child-component':child
+        }
+    })
+
+</script>
+</body>
+</html>

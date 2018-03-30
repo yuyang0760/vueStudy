@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<style type="text/css">
+    img {width: 300px;height: 245px;}
+    
+</style>
+</head>
+<body>
+    <img src="https://cn.vuejs.org/images/props-events.png" alt="父子组件通信" srcset=""><br>
+    <div>
+         在 Vue 中，父子组件的关系可以总结为 <strong>prop 向下传递，事件向上传递。</strong>父组件通过<strong>prop</strong> 给子组件下发数据，子组件通过<strong>事件</strong>给父组件发送消息。看看它们是怎么工作的。
+    </div>
+
+    <div id="app">
+        <child v-bind:msg="message"></child>
+    </div>
+
+    <script>
+        
+        // props 其实就是组件的属性
+        // 动态props 其实就是说 自己的组件也可以用 v-bind
+        // v-bind 也可以传递一个对象
+        Vue.component('child',{
+            template:'<div>{{msg}}</div>',
+            // data:function () {
+            //     return {msg:'我是组件'}
+            // },
+            props:['msg']
+        })
+
+        new Vue({
+            el:'#app',
+            data:{
+                message:'我是组件'
+            }
+        })
+
+    </script>
+
+
+
+</body>
+</html>

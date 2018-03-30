@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script  src="./node_modules/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{text}}  
+    </div>
+
+
+    <script>
+
+        let app=new Vue({
+            el:'#app',
+            data:{
+                text:"hello vue",
+            },
+            created:function(){
+                console.log(this.text+"你好");
+            }
+        })
+        
+    </script>
+</body>
+</html>

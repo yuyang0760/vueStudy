@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .red {
+            color: red
+        }
+
+        .blue {
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(value,key) in datas">{{value}}----{{key}}</li>
+    </ul>
+</div>
+
+
+<script>
+    var app= new Vue({
+        el:'#app',
+        data:{
+            datas:{
+                name:'yy',
+                age:10,     //Vue.set(vm.userProfile, 'age', 27)
+                height:100
+            }
+        }
+    })
+</script>
+</body>
+
+
+</html>

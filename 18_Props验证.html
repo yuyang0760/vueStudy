@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <style type="text/css">
+        img {
+            width: 300px;
+            height: 245px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://cn.vuejs.org/images/props-events.png" alt="父子组件通信" srcset="">
+    <br>
+    <div>
+        在 Vue 中，父子组件的关系可以总结为
+        <strong>prop 向下传递，事件向上传递。</strong>父组件通过
+        <strong>prop</strong> 给子组件下发数据，子组件通过
+        <strong>事件</strong>给父组件发送消息。看看它们是怎么工作的。
+    </div>
+
+    <div id="app">
+        <child v-bind:msg="message"></child>
+    </div>
+
+    <script>
+
+  Vue.component('example', {
+        props: {
+            // 基础类型检测 (`null` 指允许任何类型)
+            propA: Number,
+            // 可能是多种类型
+            propB: [String, Number],
+            // 必传且是字符串
+            propC: {
+                type: String,
+                required: true
+            },
+            // 数值且有默认值
+            propD: {
+                type: Number,
+                default: 100
+            },
+            // 数组/对象的默认值应当由一个工厂函数返回
+            propE: {
+                type: Object,
+                default: function () {
+                    return { message: 'hello' }
+                }
+            },
+            // 自定义验证函数
+            propF: {
+                validator: function (value) {
+                    return value > 10
+                }
+            }
+        }
+    })
+
+        new Vue({
+            el: '#app',
+            data: {
+                message: '我是组件'
+            }
+        })
+
+    </script>
+
+<!-- type 可以是下面原生构造器： 
+    String 
+    Number 
+    Boolean 
+    Function
+     Object 
+     Array 
+     Symbol 
+     type 
+     也可以是一个自定义构造器函数，使用 instanceof 检测。 -->
+
+</body>
+
+</html>
+

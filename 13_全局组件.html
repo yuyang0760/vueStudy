@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script  src="./node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <my-component></my-component>
+</div>
+    <div id="app">
+        <yy-component></yy-component>
+    </div>
+   
+<script>
+
+    // 1. 定义模板
+    var child= {
+        template:'<div> 一个自定义组件 </div>'
+    }
+    // 2. 注册组件 
+    Vue.component('yy-component',child)
+
+    new Vue({
+        el:'#app'
+    })
+
+
+
+</script>
+</body>
+</html>

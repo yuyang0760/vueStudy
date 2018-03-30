@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script  src="./node_modules/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{text1}}
+    </div>
+
+    <script>
+        let app=new Vue({
+            el:'#app',          // 选取ID,不要忘记#
+            data:{
+                text:'hello vue',
+            }
+        })
+    </script>
+</body>
+</html>

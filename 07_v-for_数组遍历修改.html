@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .red {
+            color: red
+        }
+
+        .blue {
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+ <div id="app">
+     <ul>
+         <li v-for="item in datas">{{item.m}} {{item.f}}</li>
+     </ul>
+ </div>
+</body>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            datas:[
+                {m:1},
+                {m:2},
+                {m:3},  // 修改用 Vue.set(app.datas,2,{m:222223})
+                {m:4}
+            ]
+        }
+    })
+</script>
+
+</html>
